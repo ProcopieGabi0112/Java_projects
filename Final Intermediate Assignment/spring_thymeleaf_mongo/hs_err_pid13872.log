@@ -1,0 +1,219 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3469), pid=13872, tid=14164
+#
+# JRE version:  (17.0.1+12) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.1+12-39, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:TieredStopAtLevel=1 -Xverify:none -Dspring.output.ansi.enabled=always -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.3\lib\idea_rt.jar=56867:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.3\bin -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Dfile.encoding=UTF-8 com.project.spring_thymeleaf_mongo.SpringThymeleafMongoApplication
+
+Host: Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 14393 (10.0.14393.4651)
+Time: Sun Nov 28 22:49:17 2021 GTB Standard Time elapsed time: 0.368786 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002373f6364c0):  JavaThread "Unknown thread" [_thread_in_vm, id=14164, stack(0x000000d275c00000,0x000000d275d00000)]
+
+Stack: [0x000000d275c00000,0x000000d275d00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x66fa1a]
+V  [jvm.dll+0x7ce5a4]
+V  [jvm.dll+0x7cfd4e]
+V  [jvm.dll+0x7d03b3]
+V  [jvm.dll+0x242b05]
+V  [jvm.dll+0x66ca39]
+V  [jvm.dll+0x661502]
+V  [jvm.dll+0x30081b]
+V  [jvm.dll+0x307da6]
+V  [jvm.dll+0x357a1e]
+V  [jvm.dll+0x357c4f]
+V  [jvm.dll+0x2d7ad8]
+V  [jvm.dll+0x2d8a44]
+V  [jvm.dll+0x7a01e1]
+V  [jvm.dll+0x365791]
+V  [jvm.dll+0x77f6cc]
+V  [jvm.dll+0x3e812f]
+V  [jvm.dll+0x3e9bd1]
+C  [jli.dll+0x527b]
+C  [ucrtbase.dll+0x1fb80]
+C  [KERNEL32.DLL+0x84d4]
+C  [ntdll.dll+0x51791]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffd066a7818, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002373f676840 GCTaskThread "GC Thread#0" [stack: 0x000000d275e00000,0x000000d275f00000] [id=13900]
+  0x000002373f688590 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000d275f00000,0x000000d276000000] [id=8768]
+  0x000002373f689070 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000d276000000,0x000000d276100000] [id=112]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd05ef84b7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002373f631da0] Heap_lock - owner thread: 0x000002373f6364c0
+
+Heap address: 0x0000000081000000, size: 2032 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000081000000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd062d8d89]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.041 Loaded shared library C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff7d2780000 - 0x00007ff7d278e000 	C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\java.exe
+0x00007ffd63d60000 - 0x00007ffd63f2f000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffd618c0000 - 0x00007ffd6196d000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffd48230000 - 0x00007ffd48246000 	C:\Program Files\AVAST Software\Avast\aswhook.dll
+0x00007ffd61070000 - 0x00007ffd6128e000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffd60b10000 - 0x00007ffd60c04000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffd5ddd0000 - 0x00007ffd5dde8000 	C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\jli.dll
+0x00007ffd61f10000 - 0x00007ffd62076000 	C:\Windows\System32\USER32.dll
+0x00007ffd612e0000 - 0x00007ffd612fe000 	C:\Windows\System32\win32u.dll
+0x00007ffd62300000 - 0x00007ffd62334000 	C:\Windows\System32\GDI32.dll
+0x00007ffd60ee0000 - 0x00007ffd61064000 	C:\Windows\System32\gdi32full.dll
+0x00007ffd5dbb0000 - 0x00007ffd5dbca000 	C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\VCRUNTIME140.dll
+0x00007ffd59080000 - 0x00007ffd592fa000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.4169_none_7de0bbf28341b1f2\COMCTL32.dll
+0x00007ffd63af0000 - 0x00007ffd63b8e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffd61970000 - 0x00007ffd61c36000 	C:\Windows\System32\combase.dll
+0x00007ffd61730000 - 0x00007ffd6184f000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffd60c70000 - 0x00007ffd60cdc000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffd63b90000 - 0x00007ffd63bbe000 	C:\Windows\System32\IMM32.DLL
+0x00007ffd5e7c0000 - 0x00007ffd5e7cc000 	C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\vcruntime140_1.dll
+0x00007ffd3f840000 - 0x00007ffd3f8cd000 	C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\msvcp140.dll
+0x00007ffd05c10000 - 0x00007ffd067ce000 	C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\server\jvm.dll
+0x00007ffd639a0000 - 0x00007ffd63a42000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffd61e40000 - 0x00007ffd61e99000 	C:\Windows\System32\sechost.dll
+0x00007ffd61f00000 - 0x00007ffd61f08000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffd594c0000 - 0x00007ffd594c9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffd62400000 - 0x00007ffd6246a000 	C:\Windows\System32\WS2_32.dll
+0x00007ffd5e720000 - 0x00007ffd5e743000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffd5c140000 - 0x00007ffd5c14a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffd5e6c0000 - 0x00007ffd5e6eb000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffd61290000 - 0x00007ffd612d2000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffd60220000 - 0x00007ffd6022f000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffd5dba0000 - 0x00007ffd5dbaa000 	C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\jimage.dll
+0x00007ffd57f70000 - 0x00007ffd58102000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffd57ef0000 - 0x00007ffd57f19000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffd5db90000 - 0x00007ffd5db9e000 	C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\instrument.dll
+0x00007ffd50440000 - 0x00007ffd50465000 	C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Gabi\.jdks\openjdk-17.0.1\bin;C:\Windows\SYSTEM32;C:\Program Files\AVAST Software\Avast;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.4169_none_7de0bbf28341b1f2;C:\Users\Gabi\.jdks\openjdk-17.0.1\bin\server
+
+VM Arguments:
+jvm_args: -XX:TieredStopAtLevel=1 -Xverify:none -Dspring.output.ansi.enabled=always -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.3\lib\idea_rt.jar=56867:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.3\bin -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Dfile.encoding=UTF-8 
+java_command: com.project.spring_thymeleaf_mongo.SpringThymeleafMongoApplication
+java_class_path (initial): C:\Users\Gabi\Desktop\Intermediate Assignment\spring_thymeleaf_mongo\target\classes;C:\Users\Gabi\.m2\repository\org\springframework\boot\spring-boot-starter-data-mongodb-reactive\2.6.0\spring-boot-starter-data-mongodb-reactive-2.6.0.jar;C:\Users\Gabi\.m2\repository\org\springframework\boot\spring-boot-starter\2.6.0\spring-boot-starter-2.6.0.jar;C:\Users\Gabi\.m2\repository\org\springframework\boot\spring-boot\2.6.0\spring-boot-2.6.0.jar;C:\Users\Gabi\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.6.0\spring-boot-autoconfigure-2.6.0.jar;C:\Users\Gabi\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.6.0\spring-boot-starter-logging-2.6.0.jar;C:\Users\Gabi\.m2\repository\ch\qos\logback\logback-classic\1.2.7\logback-classic-1.2.7.jar;C:\Users\Gabi\.m2\repository\ch\qos\logback\logback-core\1.2.7\logback-core-1.2.7.jar;C:\Users\Gabi\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.14.1\log4j-to-slf4j-2.14.1.jar;C:\Users\Gabi\.m2\repository\org\apache\logging\log4j\log4j-api\2.14.1\log4j-api-2.14.1.jar;C:\Users\Gabi\.m2\repository\org\slf4j\jul-to-slf4j\1.7.32\jul-to-slf4j-1.7.32.jar;C:\Users\Gabi\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar;C:\Users\Gabi\.m2\repository\org\yaml\snakeyaml\1.29\snakeyaml-1.29.jar;C:\Users\Gabi\.m2\repository\io\projectreactor\reactor-core\3.4.12\reactor-core-3.4.12.jar;C:\Users\Gabi\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\Gabi\.m2\repository\org\mongodb\mongodb-driver-reactivestreams\4.4.0\mongodb-driver-reactivestreams-4.4.0.jar;C:\Users\Gabi\.m2\repository\org\mongodb\bson\4.4.0\bson-4.4.0.jar;C:\Users\Gabi\.m2\repository\org\mongodb\mongodb-driver-core\4.4.0\mongodb-driver-core-4.4.0.jar;C:\Users\Gabi\.m2\repository\org\springframework\data\spring-data-mongodb\3.3.0\spring-data-mongodb-3.3.0.jar;C:\Users\Gabi\.m2\repository\org\springframework\spring-tx\5.
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2130706432                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2130706432                             {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-16.0.1
+PATH=C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk-16.0.1\bin;C:\Program Files (x86)\HP\IdrsOCR_15.2.10.1114\;C:\Program Files (x86)\HP\Common\HPDestPlgIn\;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\5.0\bin;C:\Users\Gabi\AppData\Local\Microsoft\WindowsApps;C:\Users\Gabi\AppData\Local\Programs\Microsoft VS Code\bin;C:\MinGW\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.2\bin;;C:\Users\Gabi\AppData\Local\GitHubDesktop\bin;C:\Program Files (x86)\HP\Common\HPDestPlgIn\
+USERNAME=Gabi
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 11, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 14393 (10.0.14393.4651)
+OS uptime: 2 days 8:44 hours
+
+CPU: total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 158 stepping 11 microcode 0xde, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt
+
+Memory: 4k page, system-wide physical 8125M (1522M free)
+TotalPageFile size 15484M (AvailPageFile size 83M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 46M, peak: 174M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.1+12-39) for windows-amd64 JRE (17.0.1+12-39), built on Sep 27 2021 18:39:29 by "mach5one" with MS VC++ 16.8 (VS2019)
+
+END.

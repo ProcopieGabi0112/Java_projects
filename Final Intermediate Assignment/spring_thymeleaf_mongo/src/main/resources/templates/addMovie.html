@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Movie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+<body style="background-color:black">
+<div class="container my-5">
+
+    <div style="height:200px;"></div>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form action="#" th:action="@{/create}" th:object="${movie}"
+                      method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="id" class="col-form-label">Id</label>
+                            <input type="text" th:field="*{id}" class="form-control"
+                                   id="id" placeholder="Id-ul filmului" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="name" class="col-form-label">Nume</label>
+                            <input type="text" th:field="*{name}" class="form-control"
+                                   id="name" placeholder="Numele filmului" />
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="genre" class="col-form-label">Gen</label>
+                            <input type="text" th:field="*{genre}" class="form-control"
+                                   id="genre" placeholder="Genul filmului" />
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="age" class="col-form-label">An</label>
+                            <input type="text" th:field="*{age}" class="form-control"
+                                   id="age" placeholder="Anul aparitiei" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="score" class="col-form-label">Ratings / 10</label>
+                            <input type="text" th:field="*{score}" class="form-control"
+                                   id="score" placeholder="Rating" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value=" Submit ">
+                        </div>
+
+                        <input type="hidden" id="movieId" th:field="*{id}">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
